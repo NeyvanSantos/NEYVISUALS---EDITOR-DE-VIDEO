@@ -361,6 +361,20 @@ nav.scrolled {
   filter: grayscale(100%);
 }
 
+.hero-video-wrap iframe {
+  width: 100vw;
+  height: 56.25vw; /* 16:9 Aspect Ratio */
+  min-height: 100vh;
+  min-width: 177.77vh; /* 16:9 Aspect Ratio */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: .22;
+  filter: grayscale(100%);
+  pointer-events: none;
+}
+
 .hero-bg-anim {
   position: absolute;
   inset: 0;

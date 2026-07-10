@@ -8,9 +8,13 @@ export default function Hero() {
   return (
     <section className="hero" id="inicio">
       <div className="hero-video-wrap">
-        <video autoPlay muted loop playsInline preload="auto">
-          <source src="/videos/hero-bg.mp4" type="video/mp4" />
-        </video>
+        <iframe
+          src="https://www.youtube.com/embed/DQEXmznrwis?autoplay=1&mute=1&loop=1&playlist=DQEXmznrwis&controls=0&showinfo=0&rel=0&playsinline=1&enablejsapi=1"
+          title="NeyVisuals Hero Background Video"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
       </div>
 
       <div className="hero-bg-anim" />
