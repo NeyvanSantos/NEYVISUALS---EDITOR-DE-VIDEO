@@ -369,7 +369,9 @@ nav.scrolled {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1.02);
+  border: none;
+  outline: none;
   opacity: .22;
   filter: grayscale(100%);
   pointer-events: none;
