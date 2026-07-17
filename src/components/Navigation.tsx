@@ -18,6 +18,14 @@ export default function Navigation() {
 
   const closeMobile = () => setMobileOpen(false);
 
+  const handleLanguageChange = (lang: 'PT' | 'EN') => {
+    setLanguage(lang);
+    // Fechar menu no mobile se estiver aberto
+    if (window.innerWidth <= 900) {
+      closeMobile();
+    }
+  };
+
   const navLinks = [
     { href: '#inicio', label: t('nav.home') },
     { href: '#sobre', label: t('nav.about') },
@@ -71,11 +79,35 @@ export default function Navigation() {
       </nav>
 
       <div className={`nav-mobile ${mobileOpen ? 'open' : ''}`}>
-        {navLinks.map(link => (
-          <a key={link.href} href={link.href} onClick={closeMobile}>
-            {link.label}
-          </a>
-        ))}
+        <div className="nav-mobile-content">
+          <div className="nav-mobile-links">
+            {navLinks.map(link => (
+              <a key={link.href} href={link.href} onClick={closeMobile}>
+                {link.label}
+              </a>
+            ))}
+          </div>
+          
+          <div className="nav-mobile-divider" />
+          
+          <div className="nav-mobile-lang">
+            <span className="lang-label">{language === 'PT' ? 'Idioma' : 'Language'}</span>
+            <div className="lang-toggle-mobile">
+              <button
+                className={`lang-btn-mobile ${language === 'PT' ? 'active' : ''}`}
+                onClick={() => handleLanguageChange('PT')}
+              >
+                PT
+              </button>
+              <button
+                className={`lang-btn-mobile ${language === 'EN' ? 'active' : ''}`}
+                onClick={() => handleLanguageChange('EN')}
+              >
+                EN
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
