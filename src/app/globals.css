@@ -1297,8 +1297,16 @@ h1.hero-hl em {
   .stat:nth-child(2) { border-right: none; }
 
   .about-inner { grid-template-columns: 1fr; }
-  .about-photo { max-height: 400px; border-right: none; border-bottom: 1px solid var(--border); }
-  .about-photo img { object-position: center bottom !important; }
+  .about-photo {
+    max-width: 320px;
+    margin: 0 auto;
+    aspect-ratio: 3 / 4;
+    max-height: none;
+    border-right: none;
+  }
+  .about-photo img {
+    object-position: center center !important;
+  }
   .about-txt { padding: 40px 24px; }
 
   .port-item { flex: 0 0 320px; height: 180px; }
